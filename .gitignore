@@ -3,3 +3,4 @@ npm-debug.log
 .cache
 node_modules/
 dist/
+im.json
