@@ -1,0 +1,15 @@
+.gitignore
+.prettierrc
+.prettierignore
+.npmignore
+.prettierrc
+.travis.yml
+package-lock.json
+rollup.config.js
+tsconfig.json
+lib/
+docs/
+demo/
+node_modules/
+coverage/
+fixtures/
