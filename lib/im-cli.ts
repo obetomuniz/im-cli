@@ -60,8 +60,23 @@ async function addOrUpdatePackage(
   )
 }
 
-function deletePackage(packageName: string): void {
-  // ...
+function removePackage(packageName: string): void {
+  if (!fs.existsSync(importMapFile)) {
+    console.error("im.json file not found.")
+    return
+  }
+
+  const fileContent = fs.readFileSync(importMapFile, "utf8")
+  const importMap = JSON.parse(fileContent)
+
+  if (!importMap.imports[packageName]) {
+    console.error(`Package ${packageName} not found in im.json.`)
+    return
+  }
+
+  delete importMap.imports[packageName]
+  fs.writeFileSync(importMapFile, JSON.stringify(importMap, null, 2))
+  console.log(`Package ${packageName} removed from im.json`)
 }
 
 function displayHelp(): void {
@@ -73,7 +88,7 @@ function displayHelp(): void {
     "  im update <package-name>             Update a package in the import map"
   )
   console.log(
-    "  im delete <package-name>             Delete a package from the import map"
+    "  im remove <package-name>             Remove a package from the import map"
   )
   console.log(
     "  im help                              Display this help message"
@@ -88,9 +103,9 @@ function displayHelp(): void {
         await addOrUpdatePackage(packageArg, command === "update")
       }
       break
-    case "delete":
+    case "remove":
       if (packageArg) {
-        deletePackage(packageArg)
+        removePackage(packageArg)
       }
       break
     case "help":

@@ -1,6 +1,5 @@
 {
   "imports": {
-    "lodash": "https://esm.sh/lodash@4.17.21",
-    "moment": "https://esm.sh/moment@2.29.4"
+    "lodash": "https://esm.sh/lodash@4.17.21"
   }
 }
