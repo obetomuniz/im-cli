@@ -4,12 +4,12 @@ import fs from "fs"
 import axios from "axios"
 import ora from "ora"
 
+const [, , command, packageArg] = process.argv
+const importMapFile = "im.json"
+
 type ImportMap = {
   imports: { [key: string]: string }
 }
-
-const [, , command, packageArg] = process.argv
-const importMapFile = "im.json"
 
 async function getPackageUrl(
   packageName: string,

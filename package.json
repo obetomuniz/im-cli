@@ -13,6 +13,7 @@
     "im": "dist/im-cli.js"
   },
   "main": "dist/im-cli.js",
+  "types": "dist/im-cli.d.ts",
   "files": [
     "dist"
   ],
@@ -40,27 +41,6 @@
     "start": "ts-node src/im-cli.ts",
     "prepublishOnly": "npm run build",
     "release": "release-it"
-  },
-  "release-it": {
-    "git": {
-      "commitMessage": "Release v${version}"
-    },
-    "github": {
-      "release": true,
-      "web": true
-    },
-    "npm": {
-      "publish": true
-    },
-    "plugins": {
-      "@release-it/conventional-changelog": {
-        "infile": "docs/CHANGELOG.md",
-        "header": "# Changelog",
-        "preset": {
-          "name": "conventionalcommits"
-        }
-      }
-    }
   },
   "release-it": {
     "git": {
