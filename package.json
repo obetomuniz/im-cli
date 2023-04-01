@@ -61,5 +61,26 @@
         }
       }
     }
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "Release v${version}"
+    },
+    "github": {
+      "release": true,
+      "web": true
+    },
+    "npm": {
+      "publish": true
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "infile": "docs/CHANGELOG.md",
+        "header": "# Changelog",
+        "preset": {
+          "name": "conventionalcommits"
+        }
+      }
+    }
   }
 }
