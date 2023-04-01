@@ -1,12 +1,15 @@
-# im-cli
+# Import Maps Command Line Interface
 
-`im-cli` is a command-line utility for managing JavaScript import maps. It simplifies the process of adding, updating, and deleting package entries in your import map JSON file.
+A command-line utility for managing [JavaScript import maps](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script/type/importmap). 
+
+<img width="80%" alt="Screenshot 2023-04-01 at 00 54 27" src="https://user-images.githubusercontent.com/1680157/229265234-f5120ec8-28cb-4cce-9303-444b076ec032.png">
 
 This utility uses the [esm.sh](https://esm.sh) CDN to fetch package information and versions.
 
 ## Installation
 
 To install `im-cli` globally, run the following command:
+
 
 ```bash
 npm install -g im-cli
